@@ -349,13 +349,12 @@ app.get("/rate", function(req, res) {
               for (var i = 0; i < gradesArr.length; i++) {
                 if (gradesArr[i].user == name) {
                   res.render("rateFailed");
-                } else {
+                } 
+                }
                   res.render("rate", {
                     username: req.session.username,
                     _id: _id
                   });
-                }
-              }
             }
           } else {
             console.log("Rating: No result");

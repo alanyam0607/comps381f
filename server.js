@@ -294,7 +294,6 @@ app.post("/create", function(req, res) {
 
 //Searching
 app.get("/search", function(req, res) {
-  req.session = null;
   res.render("search");
 });
 
@@ -581,7 +580,6 @@ app.get("/map", function(req, res) {
 });
 
 app.get("/secrets", function(req, res) {
-  req.session = null;
   res.render("secrets");
 });
 

@@ -294,7 +294,11 @@ app.post("/create", function(req, res) {
 
 //Searching
 app.get("/search", function(req, res) {
-  res.render("search");
+  if (!req.session.username && !req.session.authenticated) {
+    res.redirect("/login");
+  } else {
+    res.render("search");
+  }
 });
 
 app.get("/searchByKeyword", function(req, res) {
@@ -580,7 +584,11 @@ app.get("/map", function(req, res) {
 });
 
 app.get("/secrets", function(req, res) {
-  res.render("secrets");
+  if (!req.session.username && !req.session.authenticated) {
+    res.redirect("/login");
+  } else {
+    res.render("secrets");
+  }
 });
 
 function findRestaurants(db, callback) {

@@ -15,5 +15,4 @@ npm start
 ```
 ### Testing
 Go to http://localhost:8099
-# comps381f.
 # comps381f
